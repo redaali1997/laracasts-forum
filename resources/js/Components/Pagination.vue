@@ -31,7 +31,7 @@
                         <Link :href="link.url" v-if="link.url" aria-current="page" :class="['p-3', {
                             'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:outline-offset-0': !link.active,
                             'z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600': link.active
-                        }]"><span v-html="link.label"></span>
+                        }]" preserve-scroll><span v-html="link.label"></span>
                         </Link>
                     </template>
                 </nav>

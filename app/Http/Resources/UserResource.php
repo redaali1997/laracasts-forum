@@ -20,7 +20,7 @@ class UserResource extends JsonResource
             'email' => $this->when($this->id === $request->user()?->id, $this->email),
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,
-            'profile_photo_path' => $this->profile_photo_path
+            'profile_photo_url' => $this->profile_photo_url
         ];
     }
 }

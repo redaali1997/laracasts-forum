@@ -17,10 +17,10 @@ class CommentResource extends JsonResource
         return [
             'id' => $this->id,
             'body' => $this->body,
-            'user' => UserResource::make($this->user),
-            'post' => PostResource::make($this->post),
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'user' => UserResource::make($this->whenLoaded('user')),
+            'post' => PostResource::make($this->whenLoaded('post')),
+            'created_at' => $this->created_at->diffForHumans(),
+            'updated_at' => $this->updated_at->diffForHumans()
         ];
     }
 }

@@ -13,7 +13,9 @@ it('should return the correct component', function () {
 });
 
 it('passes posts to the view', function () {
-    $posts = Post::factory(3)->create()->each(fn($post) => $post->load('user'));
+    $posts = Post::factory(3)->create();
+
+    $posts->load('user');
 
     get(route('posts.index'))
         ->assertHasPaginatedResource('posts', PostResource::collection($posts->reverse()));
